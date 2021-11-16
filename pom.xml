@@ -11,6 +11,8 @@
 
     <modules>
         <module>hi-framework-common-interface</module>
+        <module>hi-framework-core</module>
+        <module>hi-framework-spring</module>
     </modules>
 
     <properties>
@@ -31,6 +33,18 @@
             <dependency>
                 <groupId>cc.chenzhihao.hi</groupId>
                 <artifactId>hi-framework-common-interface</artifactId>
+                <version>${hi-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cc.chenzhihao.hi</groupId>
+                <artifactId>hi-framework-core</artifactId>
+                <version>${hi-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cc.chenzhihao.hi</groupId>
+                <artifactId>hi-framework-spring</artifactId>
                 <version>${hi-framework.version}</version>
             </dependency>
 
