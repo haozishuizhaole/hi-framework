@@ -6,5 +6,5 @@ package cc.chenzhihao.hi.framework.core.mark;
  * @author jacksonchenzhihao
  * @date 2021-11-17 20:13
  */
-public interface Entity<ID extends Identitier> extends Identifiable<ID> {
+public interface Entity<ID extends Identifier> extends Identifiable<ID> {
 }

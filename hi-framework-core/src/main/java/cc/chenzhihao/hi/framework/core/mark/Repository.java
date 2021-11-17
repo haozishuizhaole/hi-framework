@@ -6,7 +6,7 @@ package cc.chenzhihao.hi.framework.core.mark;
  * @author jacksonchenzhihao
  * @date 2021-11-17 20:16
  */
-public interface Repository<T extends Aggregate<ID>, ID extends Identitier> {
+public interface Repository<T extends Aggregate<ID>, ID extends Identifier> {
 
     /**
      * 通过ID寻找Aggregate

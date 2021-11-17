@@ -31,6 +31,14 @@ public class Result<T> {
         this.data = data;
     }
 
+    public static <E> Result<E> success(E data) {
+        return new Result<>(0, "success", data);
+    }
+
+    public static <E> Result<E> success(int code, String msg, E data) {
+        return new Result<>(code, msg, data);
+    }
+
     public int getCode() {
         return code;
     }
@@ -79,14 +87,6 @@ public class Result<T> {
     @Override
     public int hashCode() {
         return Objects.hash(code, msg, data);
-    }
-
-    public static <E> Result<E> success(E data) {
-        return new Result<>(0, "success", data);
-    }
-
-    public static <E> Result<E> success(int code, String msg, E data) {
-        return new Result<>(code, msg, data);
     }
 }
 

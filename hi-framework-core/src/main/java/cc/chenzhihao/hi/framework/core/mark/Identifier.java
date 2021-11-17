@@ -8,5 +8,5 @@ import java.io.Serializable;
  * @author jacksonchenzhihao
  * @date 2021-11-17 20:08
  */
-public interface Identitier extends Serializable {
+public interface Identifier extends Serializable {
 }

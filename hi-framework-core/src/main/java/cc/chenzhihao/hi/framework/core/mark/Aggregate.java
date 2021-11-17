@@ -6,5 +6,5 @@ package cc.chenzhihao.hi.framework.core.mark;
  * @author jacksonchenzhihao
  * @date 2021-11-17 20:14
  */
-public interface Aggregate<ID extends Identitier> extends Entity<ID> {
+public interface Aggregate<ID extends Identifier> extends Entity<ID> {
 }
