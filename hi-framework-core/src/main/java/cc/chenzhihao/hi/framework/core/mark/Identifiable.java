@@ -13,6 +13,6 @@ public interface Identifiable<ID extends Identifier> {
      *
      * @return ID
      */
-    ID getID();
+    ID getId();
 
 }
