@@ -86,7 +86,7 @@ public class RealmName implements ValueObject {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    public Object clone() throws CloneNotSupportedException {
         RealmName realmName;
         try {
             realmName = (RealmName) super.clone();
