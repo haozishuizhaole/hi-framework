@@ -27,6 +27,7 @@
         <mysql-connector-java.version>8.0.27</mysql-connector-java.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <org.apache.commons.commons-collections4.version>4.4</org.apache.commons.commons-collections4.version>
+        <com.google.guava.guava.version>31.0.1-jre</com.google.guava.guava.version>
     </properties>
 
     <dependencyManagement>
@@ -89,13 +90,17 @@
                 <version>${mybatis-spring-boot-starter.version}</version>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
                 <version>${org.apache.commons.commons-collections4.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${com.google.guava.guava.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
