@@ -86,7 +86,7 @@ public class RealmName implements ValueObject {
     }
 
     @Override
-    public Object clone() {
+    public RealmName clone() {
         RealmName realmName;
         try {
             realmName = (RealmName) super.clone();
