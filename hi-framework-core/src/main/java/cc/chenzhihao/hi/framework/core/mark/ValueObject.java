@@ -8,5 +8,5 @@ import java.io.Serializable;
  * @author jacksonchenzhihao
  * @date 2021-11-17 20:39
  */
-public interface ValueObject extends Serializable {
+public interface ValueObject extends Serializable, Cloneable {
 }

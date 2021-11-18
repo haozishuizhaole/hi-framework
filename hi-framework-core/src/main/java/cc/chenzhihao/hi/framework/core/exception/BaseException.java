@@ -1,18 +1,18 @@
 package cc.chenzhihao.hi.framework.core.exception;
 
 /**
- * 系统异常
+ * 通用异常
  *
  * @author jacksonchenzhihao
  * @date 2021-11-11 14:42
  */
-public class SystemException extends RuntimeException {
+public class BaseException extends RuntimeException {
 
-    public SystemException(String message) {
+    public BaseException(String message) {
         super(message);
     }
 
-    public SystemException(String message, Throwable cause) {
+    public BaseException(String message, Throwable cause) {
         super(message, cause);
     }
 }

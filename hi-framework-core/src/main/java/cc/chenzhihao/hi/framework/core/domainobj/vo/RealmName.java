@@ -1,5 +1,6 @@
 package cc.chenzhihao.hi.framework.core.domainobj.vo;
 
+import cc.chenzhihao.hi.framework.core.exception.Exceptions;
 import cc.chenzhihao.hi.framework.core.mark.ValueObject;
 import cc.chenzhihao.hi.framework.core.regex.UrlRegex;
 import cc.chenzhihao.hi.framework.core.util.Precondition;
@@ -13,6 +14,7 @@ import java.util.regex.Pattern;
  * @author jacksonchenzhihao
  * @date 2021-11-17 20:36
  */
+
 public class RealmName implements ValueObject {
 
     /**
@@ -81,5 +83,16 @@ public class RealmName implements ValueObject {
         public boolean match(String realmName) {
             return pattern.matcher(realmName).matches();
         }
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        RealmName realmName;
+        try {
+            realmName = (RealmName) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw Exceptions.toSystemException(e);
+        }
+        return realmName;
     }
 }

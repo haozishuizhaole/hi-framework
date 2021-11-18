@@ -6,7 +6,7 @@ package cc.chenzhihao.hi.framework.core.exception;
  * @author jacksonchenzhihao
  * @date 2021-11-11 14:42
  */
-public class BeanHolderException extends RuntimeException {
+public class BeanHolderException extends SystemException {
 
     public BeanHolderException(String message) {
         super(message);
