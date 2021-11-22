@@ -2,7 +2,7 @@ package cc.chenzhihao.hi.framework.core.domainobj.vo;
 
 import cc.chenzhihao.hi.framework.core.exception.Exceptions;
 import cc.chenzhihao.hi.framework.core.mark.ValueObject;
-import cc.chenzhihao.hi.framework.core.regex.UrlRegex;
+import cc.chenzhihao.hi.framework.core.regex.Regex;
 import cc.chenzhihao.hi.framework.core.util.Precondition;
 
 import java.util.Objects;
@@ -78,12 +78,12 @@ public class RealmName implements ValueObject {
         /**
          * 普通域名
          */
-        NORMAL(UrlRegex.REALM_NAME_PATTERN),
+        NORMAL(Regex.REALM_NAME_PATTERN),
 
         /**
          * 带协议和端口号的域名
          */
-        WITH_PROTOCOL_AND_PORT(UrlRegex.REALM_NAME_WITH_PROTOCOL_AND_PORT_PATTERN);
+        WITH_PROTOCOL_AND_PORT(Regex.REALM_NAME_WITH_PROTOCOL_AND_PORT_PATTERN);
 
         private final Pattern pattern;
 
