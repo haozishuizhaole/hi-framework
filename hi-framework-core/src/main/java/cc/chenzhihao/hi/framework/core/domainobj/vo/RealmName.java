@@ -62,6 +62,17 @@ public class RealmName implements ValueObject {
                 '}';
     }
 
+    @Override
+    public RealmName clone() {
+        RealmName realmName;
+        try {
+            realmName = (RealmName) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw Exceptions.toSystemException(e);
+        }
+        return realmName;
+    }
+
     public enum RealmMode {
 
         /**
@@ -83,16 +94,5 @@ public class RealmName implements ValueObject {
         public boolean match(String realmName) {
             return pattern.matcher(realmName).matches();
         }
-    }
-
-    @Override
-    public RealmName clone() {
-        RealmName realmName;
-        try {
-            realmName = (RealmName) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw Exceptions.toSystemException(e);
-        }
-        return realmName;
     }
 }
