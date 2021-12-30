@@ -10,6 +10,7 @@ import cc.chenzhihao.hi.framework.core.json.HiLocalTimeSerializer;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -78,5 +79,25 @@ public class JsonUtil {
             throw Exceptions.toSystemException(e);
         }
         return result;
+    }
+
+    public static <T> T toObject(String json, Class<T> clazz) {
+        T result;
+        try {
+            result = OBJECT_MAPPER.readValue(json, clazz);
+        } catch (JsonProcessingException e) {
+            throw Exceptions.toSystemException(e);
+        }
+        return result;
+    }
+
+    public static JsonNode toTree(String json) {
+        JsonNode node;
+        try {
+            node = OBJECT_MAPPER.readTree(json);
+        } catch (JsonProcessingException e) {
+            throw Exceptions.toSystemException(e);
+        }
+        return node;
     }
 }
