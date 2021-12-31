@@ -61,6 +61,10 @@ public class Result<T> implements Serializable {
         return custom(resultEnum.getCode(), resultEnum.getMsg(), data, ext);
     }
 
+    public static <E> Result<E> custom(ResultEnum resultEnum, E data) {
+        return custom(resultEnum.getCode(), resultEnum.getMsg(), data, null);
+    }
+
     public static <E> Result<E> custom(ResultEnum resultEnum) {
         return custom(resultEnum.getCode(), resultEnum.getMsg());
     }
