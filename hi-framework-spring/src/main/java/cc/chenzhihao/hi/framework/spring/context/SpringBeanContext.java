@@ -12,7 +12,6 @@ import org.springframework.context.ApplicationContextAware;
  * @author jacksonchenzhihao
  * @date 2021-11-11 15:18
  */
-@EnableCaching
 public class SpringBeanContext implements BeanContext, ApplicationContextAware {
 
     private ApplicationContext applicationContext;

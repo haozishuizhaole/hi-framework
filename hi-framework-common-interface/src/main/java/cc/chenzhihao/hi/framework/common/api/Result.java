@@ -1,5 +1,7 @@
 package cc.chenzhihao.hi.framework.common.api;
 
+import java.io.Serializable;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -8,7 +10,9 @@ import java.util.Objects;
  * @author jacksonchenzhihao
  * @date 2021-11-16 11:13
  */
-public class Result<T> {
+public class Result<T> implements Serializable {
+
+    private static final long serialVersionUID = 3510023082723933280L;
 
     /**
      * 响应码
@@ -25,18 +29,40 @@ public class Result<T> {
      */
     private T data;
 
-    public Result(int code, String msg, T data) {
+    /**
+     * 扩展信息
+     */
+    private Map<String, Object> ext;
+
+    private Result(int code, String msg, T data, Map<String, Object> ext) {
         this.code = code;
         this.msg = msg;
         this.data = data;
+        this.ext = ext;
     }
 
-    public static <E> Result<E> success(E data) {
-        return new Result<>(0, "success", data);
+    public static <E> Result<E> custom(int code, String msg) {
+        return custom(code, msg, null, null);
     }
 
-    public static <E> Result<E> success(int code, String msg, E data) {
-        return new Result<>(code, msg, data);
+    public static <E> Result<E> custom(int code, String msg, E data) {
+        return custom(code, msg, data, null);
+    }
+
+    public static <E> Result<E> custom(int code, String msg, Map<String, Object> ext) {
+        return custom(code, msg, null, ext);
+    }
+
+    public static <E> Result<E> custom(int code, String msg, E data, Map<String, Object> ext) {
+        return new Result<>(code, msg, data, ext);
+    }
+
+    public static <E> Result<E> custom(ResultEnum resultEnum, E data, Map<String, Object> ext) {
+        return custom(resultEnum.getCode(), resultEnum.getMsg(), data, ext);
+    }
+
+    public static <E> Result<E> custom(ResultEnum resultEnum) {
+        return custom(resultEnum.getCode(), resultEnum.getMsg());
     }
 
     public int getCode() {
@@ -63,12 +89,21 @@ public class Result<T> {
         this.data = data;
     }
 
+    public Map<String, Object> getExt() {
+        return ext;
+    }
+
+    public void setExt(Map<String, Object> ext) {
+        this.ext = ext;
+    }
+
     @Override
     public String toString() {
         return "Result{" +
                 "code=" + code +
                 ", msg='" + msg + '\'' +
                 ", data=" + data +
+                ", ext=" + ext +
                 '}';
     }
 
@@ -81,12 +116,12 @@ public class Result<T> {
             return false;
         }
         Result<?> result = (Result<?>) o;
-        return code == result.code && msg.equals(result.msg) && data.equals(result.data);
+        return code == result.code && msg.equals(result.msg) && data.equals(result.data) && ext.equals(result.ext);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, msg, data);
+        return Objects.hash(code, msg, data, ext);
     }
 }
 
