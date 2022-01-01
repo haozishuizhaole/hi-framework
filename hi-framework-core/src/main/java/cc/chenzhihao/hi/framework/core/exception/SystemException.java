@@ -8,6 +8,8 @@ package cc.chenzhihao.hi.framework.core.exception;
  */
 public class SystemException extends BaseException {
 
+    private static final long serialVersionUID = -3433844735471059454L;
+
     public SystemException(String message) {
         super(message);
     }

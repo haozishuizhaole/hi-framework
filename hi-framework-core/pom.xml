@@ -18,6 +18,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>cc.chenzhihao.hi</groupId>
+            <artifactId>hi-framework-common-interface</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
